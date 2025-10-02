@@ -1,0 +1,92 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8; /* Hafif mavi-gri arkaplan */
+    color: #333;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    font-size: 1.1em;
+}
+
+#sira-listesi {
+    display: flex;
+    justify-content: center; /* Ortalamak için */
+    gap: 25px; /* Kartlar arası boşluk */
+    margin-top: 30px;
+}
+
+/* Kişi Kartı Stili */
+.kisi-kart {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    flex: 1; /* Esnekliği korur */
+    max-width: 280px; /* Maksimum genişlik */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kisi-kart h3 {
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+/* AKTİF KART VURGUSU (Yazılımcı Dokunuşu!) */
+.kisi-kart.active {
+    border-color: #28a745; /* Canlı Yeşil Sınır */
+    background-color: #e6ffec; /* Açık yeşil arkaplan */
+    transform: translateY(-5px) scale(1.02); /* Hafif yukarı kalkma */
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.6); /* Yeşil Parlama */
+}
+
+.kisi-kart button {
+    padding: 12px 20px;
+    background-color: #28a745; /* Yeşil ton */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.kisi-kart button:hover:enabled {
+    background-color: #218838;
+}
+
+.kisi-kart button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    /* Sıra sende değilse buton daha az dikkat çekmeli */
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9em;
+}
