@@ -1,3 +1,6 @@
+/* ===========================
+   GENEL AYARLAR
+=========================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f4f8; /* Hafif mavi-gri arkaplan */
@@ -25,14 +28,20 @@ header p {
     font-size: 1.1em;
 }
 
+/* ===========================
+   LİSTE BÖLÜMÜ
+=========================== */
 #sira-listesi {
     display: flex;
-    justify-content: center; /* Ortalamak için */
+    justify-content: center; /* Kartları ortala */
     gap: 25px; /* Kartlar arası boşluk */
     margin-top: 30px;
+    flex-wrap: wrap; /* Büyük ekranda alt satıra geçiş için */
 }
 
-/* Kişi Kartı Stili */
+/* ===========================
+   KİŞİ KARTI
+=========================== */
 .kisi-kart {
     background-color: #ffffff;
     border: 1px solid #ddd;
@@ -51,14 +60,19 @@ header p {
     font-size: 1.4em;
 }
 
-/* AKTİF KART VURGUSU (Yazılımcı Dokunuşu!) */
+/* ===========================
+   AKTİF KART VURGUSU
+=========================== */
 .kisi-kart.active {
-    border-color: #28a745; /* Canlı Yeşil Sınır */
+    border-color: #28a745; /* Canlı yeşil sınır */
     background-color: #e6ffec; /* Açık yeşil arkaplan */
     transform: translateY(-5px) scale(1.02); /* Hafif yukarı kalkma */
-    box-shadow: 0 0 20px rgba(40, 167, 69, 0.6); /* Yeşil Parlama */
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.6); /* Yeşil parlama */
 }
 
+/* ===========================
+   BUTON STİLİ
+=========================== */
 .kisi-kart button {
     padding: 12px 20px;
     background-color: #28a745; /* Yeşil ton */
@@ -80,13 +94,48 @@ header p {
     background-color: #ccc;
     color: #666;
     cursor: not-allowed;
-    /* Sıra sende değilse buton daha az dikkat çekmeli */
 }
 
+/* ===========================
+   FOOTER
+=========================== */
 footer {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1px solid #ddd;
     color: #666;
     font-size: 0.9em;
+}
+
+/* ===========================
+   MOBİL UYUM
+=========================== */
+@media (max-width: 600px) {
+    #sira-listesi {
+        flex-direction: column; /* Kartlar alt alta */
+        gap: 15px; /* Kartlar arası boşluk küçülür */
+        margin-top: 20px;
+    }
+
+    .kisi-kart {
+        max-width: 100%; /* Ekrana tam uyum */
+        padding: 15px;
+    }
+
+    .kisi-kart h3 {
+        font-size: 1.2em; /* Başlık küçülür */
+    }
+
+    .kisi-kart button {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
 }
